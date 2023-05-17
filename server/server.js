@@ -1,9 +1,11 @@
+
 const express = require('express')
 const data = require('./data.json')
 const app = express()
 const fs = require('fs')
 const bodyParser = require('body-parser')
 
+<<<<<<< HEAD
 let readDataFile;
 
 async function readData(res) {
@@ -19,6 +21,18 @@ async function readData(res) {
             } catch {
                 console.log('error parsing data', err)
             }
+=======
+
+
+fs.readFile('./data.json','utf-8',(err,jsonData) => {
+    if(err){
+        console.log(err)
+    } else {
+        try {
+             const data = JSON.parse(jsonData)
+        } catch {
+            console.log('error parsing data', err)
+>>>>>>> 1
         }
     })
 }
